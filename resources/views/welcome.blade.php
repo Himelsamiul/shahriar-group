@@ -80,6 +80,10 @@
       }
 
       /* Body & Headings */
+      html {
+        overflow-x: hidden;
+      }
+
       body {
   font-family: "Cinzel", serif;
         background-color: var(--sg-text-light);
@@ -679,7 +683,7 @@
 
             <!-- Slide 2 -->
 
-<div class="carousel-item active bg-dark text-white">
+<div class="carousel-item bg-dark text-white">
   <div class="container py-5 mt-5 text-center">
     <div class="col-lg-8 mx-auto">
       <img src="logo/ss-removebg-preview.png" alt="Shahriar Group Logo" class="img-fluid mb-4" style="max-height: 180px;">
@@ -892,7 +896,7 @@ Global Vision. Endless Possibilities
 <style>
 .image-slider {
   position: relative;
-  width: 400px;
+  width: min(400px, 100%);
   height: 300px;
   margin: auto;
   border: 3px solid #c5a200;
@@ -4121,7 +4125,7 @@ document.addEventListener("DOMContentLoaded", function(){
             "সর্বাধুনিক চিকিৎসা পরিষেবা এবং রোগী-কেন্দ্রিক যত্ন প্রদান।",
           sub_developers_name: "শাহরিয়ার ডেভেলপারস ইন্টারন্যাশনাল",
           sub_developers_tag: "রিয়েল এস্টেটে পথিকৃৎ।",
-          sub_developers_desc
+          sub_developers_desc:
             "বিশ্বব্যাপী ল্যান্ডমার্ক আবাসিক এবং বাণিজ্যিক সম্পত্তি তৈরি করা।",
           sub_visit_site: "সাইট ভিজিট করুন",
 

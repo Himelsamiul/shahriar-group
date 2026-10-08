@@ -22,3 +22,6 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# admin-uploaded branding files (runtime data)
+/public/uploads

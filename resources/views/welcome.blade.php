@@ -385,15 +385,15 @@
 
       /* Background images */
       .carousel-item:nth-child(1) {
-        background-image: url("logo/working.png");
+        background-image: url("{{ $heroBgs[0] ?? 'logo/working.png' }}");
       }
 
       .carousel-item:nth-child(2) {
-        background-image: url("logo/ChatGPT Image Nov 12, 2025, 08_48_14 PM.png");
+        background-image: url("{{ $heroBgs[1] ?? 'logo/ChatGPT Image Nov 12, 2025, 08_48_14 PM.png' }}");
       }
 
       .carousel-item:nth-child(3) {
-        background-image: url("logo/ChatGPT Image Nov 12, 2025, 09_20_03 AM.png");
+        background-image: url("{{ $heroBgs[2] ?? 'logo/ChatGPT Image Nov 12, 2025, 09_20_03 AM.png' }}");
       }
       .carousel-item {
   position: relative;
@@ -2855,21 +2855,21 @@ document.addEventListener("DOMContentLoaded", function(){
     <div class="row g-3 mt-3">
       <div class="col-md-4 col-sm-6">
         <img
-          src="logo/i.jpg"
+          src="{{ $csrImages[0] ?? 'logo/i.jpg' }}"
           class="img-fluid rounded-3 sg-card csr-img"
           alt="CSR Project 1"
         />
       </div>
       <div class="col-md-4 col-sm-6">
         <img
-          src="logo/ChatGPT Image Nov 12, 2025, 11_05_19 PM.png"
+          src="{{ $csrImages[1] ?? 'logo/ChatGPT Image Nov 12, 2025, 11_05_19 PM.png' }}"
           class="img-fluid rounded-3 sg-card csr-img"
           alt="CSR Project 2"
         />
       </div>
       <div class="col-md-4 col-sm-6">
         <img
-          src="logo/dev.jpeg"
+          src="{{ $csrImages[2] ?? 'logo/dev.jpeg' }}"
           class="img-fluid rounded-3 sg-card csr-img"
           alt="CSR Project 3"
         />
@@ -3094,56 +3094,56 @@ document.addEventListener("DOMContentLoaded", function(){
           <div class="row g-3">
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="csr">
               <img
-                src="logo/do.jpg"
+                src="{{ $galleryImages[0] ?? 'logo/do.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="energy">
               <img
-                src="logo/ex.jpg"
+                src="{{ $galleryImages[1] ?? 'logo/ex.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="motors">
               <img
-                src="logo/ag.jpg"
+                src="{{ $galleryImages[2] ?? 'logo/ag.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="hotel">
               <img
-                src="logo/ho.jpg"
+                src="{{ $galleryImages[3] ?? 'logo/ho.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="rice">
               <img
-                src="logo/ta.jpg"
+                src="{{ $galleryImages[4] ?? 'logo/ta.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="energy">
               <img
-                src="logo/dev.jpeg"
+                src="{{ $galleryImages[5] ?? 'logo/dev.jpeg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="csr">
               <img
-                src="logo/hi.jpg"
+                src="{{ $galleryImages[6] ?? 'logo/hi.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6" data-category="motors">
               <img
-                src="logo/mi.jpg"
+                src="{{ $galleryImages[7] ?? 'logo/mi.jpg' }}"
                 class="img-fluid rounded-3 sg-card w-100"
                 alt="Gallery Image"
               />

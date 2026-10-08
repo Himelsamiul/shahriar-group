@@ -26,5 +26,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::post('ceo-photo', [SettingsController::class, 'ceoPhotoUpdate'])->name('ceo.update');
         Route::get('subsidiaries', [SettingsController::class, 'subsidiaries'])->name('subsidiaries');
         Route::post('subsidiaries', [SettingsController::class, 'subsidiariesUpdate'])->name('subsidiaries.update');
+        Route::get('hero-backgrounds', [SettingsController::class, 'hero'])->name('hero');
+        Route::post('hero-backgrounds', [SettingsController::class, 'heroUpdate'])->name('hero.update');
+        Route::get('csr-images', [SettingsController::class, 'csr'])->name('csr');
+        Route::post('csr-images', [SettingsController::class, 'csrUpdate'])->name('csr.update');
+        Route::get('photo-gallery', [SettingsController::class, 'gallery'])->name('gallery');
+        Route::post('photo-gallery', [SettingsController::class, 'galleryUpdate'])->name('gallery.update');
     });
 });

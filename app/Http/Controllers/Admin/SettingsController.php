@@ -121,6 +121,87 @@ class SettingsController extends Controller
         return back()->with('success', 'Subsidiary logos updated.');
     }
 
+    public function hero()
+    {
+        return view('admin.hero', [
+            'heroBgs' => json_decode(Setting::get('hero_bgs', '[]'), true) ?: [],
+        ]);
+    }
+
+    public function heroUpdate(Request $request)
+    {
+        $request->validate([
+            'hero_bgs' => ['required', 'array', 'max:3'],
+            'hero_bgs.*' => ['image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+        ]);
+
+        $existing = json_decode(Setting::get('hero_bgs', '[]'), true) ?: [];
+        foreach ($request->file('hero_bgs') as $index => $file) {
+            if (! $file) {
+                continue;
+            }
+            $existing[$index] = $this->store($file, 'hero'.($index + 1));
+        }
+        ksort($existing);
+        Setting::set('hero_bgs', json_encode(array_values($existing)));
+
+        return back()->with('success', 'Hero backgrounds updated.');
+    }
+
+    public function csr()
+    {
+        return view('admin.csr', [
+            'csrImages' => json_decode(Setting::get('csr_images', '[]'), true) ?: [],
+        ]);
+    }
+
+    public function csrUpdate(Request $request)
+    {
+        $request->validate([
+            'csr_images' => ['required', 'array', 'max:3'],
+            'csr_images.*' => ['image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+        ]);
+
+        $existing = json_decode(Setting::get('csr_images', '[]'), true) ?: [];
+        foreach ($request->file('csr_images') as $index => $file) {
+            if (! $file) {
+                continue;
+            }
+            $existing[$index] = $this->store($file, 'csr'.($index + 1));
+        }
+        ksort($existing);
+        Setting::set('csr_images', json_encode(array_values($existing)));
+
+        return back()->with('success', 'CSR images updated.');
+    }
+
+    public function gallery()
+    {
+        return view('admin.gallery', [
+            'galleryImages' => json_decode(Setting::get('gallery_images', '[]'), true) ?: [],
+            'galleryCats' => ['csr', 'energy', 'motors', 'hotel', 'rice', 'energy', 'csr', 'motors'],
+        ]);
+    }
+
+    public function galleryUpdate(Request $request)
+    {
+        $request->validate([
+            'gallery_images' => ['required', 'array', 'max:8'],
+            'gallery_images.*' => ['image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
+        ]);
+
+        $existing = json_decode(Setting::get('gallery_images', '[]'), true) ?: [];
+        foreach ($request->file('gallery_images') as $index => $file) {
+            if (! $file) {
+                continue;
+            }
+            $existing[$index] = $this->store($file, 'gal'.($index + 1));
+        }
+        ksort($existing);
+        Setting::set('gallery_images', json_encode(array_values($existing)));
+
+        return back()->with('success', 'Photo gallery updated.');
+    }
     private function store($file, string $prefix): string
     {
         $name = $prefix.'-'.Str::random(8).'.'.$file->getClientOriginalExtension();

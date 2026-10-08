@@ -26,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
         View::share('sliderImages', json_decode(Setting::get('slider_images', '[]'), true) ?: []);
         View::share('ceoPhoto', Setting::get('ceo_photo', 'ceo/ceo4.jpeg'));
         View::share('subsidiaryImages', json_decode(Setting::get('subsidiary_images', '{}'), true) ?: []);
+        View::share('heroBgs', json_decode(Setting::get('hero_bgs', '[]'), true) ?: []);
+        View::share('csrImages', json_decode(Setting::get('csr_images', '[]'), true) ?: []);
+        View::share('galleryImages', json_decode(Setting::get('gallery_images', '[]'), true) ?: []);
     }
 }

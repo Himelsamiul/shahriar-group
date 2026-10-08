@@ -79,6 +79,15 @@
             <a class="nav-item {{ request()->routeIs('admin.subsidiaries') ? 'active' : '' }}" href="{{ route('admin.subsidiaries') }}">
                 <i class="fa-solid fa-sitemap"></i> Subsidiary Logos
             </a>
+            <a class="nav-item {{ request()->routeIs('admin.hero') ? 'active' : '' }}" href="{{ route('admin.hero') }}">
+                <i class="fa-solid fa-panorama"></i> Hero Backgrounds
+            </a>
+            <a class="nav-item {{ request()->routeIs('admin.csr') ? 'active' : '' }}" href="{{ route('admin.csr') }}">
+                <i class="fa-solid fa-hand-holding-heart"></i> CSR Images
+            </a>
+            <a class="nav-item {{ request()->routeIs('admin.gallery') ? 'active' : '' }}" href="{{ route('admin.gallery') }}">
+                <i class="fa-solid fa-photo-film"></i> Photo Gallery
+            </a>
             <div class="menu-label">Account</div>
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf

@@ -7,7 +7,10 @@ DOCROOT=~/domains/shahriargroup.com/public_html
 
 cd "$APP"
 git pull origin main
-composer install --no-dev --optimize-autoloader --no-interaction
+# Hostinger CLI PHP disables proc_open, so composer's post-install scripts
+# cannot run; skip them and run package discovery through artisan instead.
+composer install --no-dev --optimize-autoloader --no-scripts --no-interaction
+php artisan package:discover
 php artisan migrate --force
 php artisan config:cache
 php artisan route:cache

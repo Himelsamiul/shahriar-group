@@ -14,6 +14,7 @@ class SettingsController extends Controller
         return view('admin.settings', [
             'currentLogo' => Setting::get('site_logo'),
             'currentFavicon' => Setting::get('site_favicon'),
+            'sliderImages' => $this->sliderImages(),
         ]);
     }
 
@@ -23,6 +24,8 @@ class SettingsController extends Controller
             'site_logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp,svg', 'max:2048'],
             'site_favicon' => ['nullable', 'image', 'mimes:ico,png', 'max:512'],
             'site_title' => ['nullable', 'string', 'max:120'],
+            'slider_images' => ['nullable', 'array', 'max:10'],
+            'slider_images.*' => ['image', 'mimes:jpg,jpeg,png,webp', 'max:4096'],
         ]);
 
         if ($request->hasFile('site_logo')) {
@@ -37,7 +40,20 @@ class SettingsController extends Controller
             Setting::set('site_title', $validated['site_title']);
         }
 
-        return back()->with('success', 'Branding updated — the site now shows your new logo.');
+        if ($request->hasFile('slider_images')) {
+            $paths = [];
+            foreach ($request->file('slider_images') as $image) {
+                $paths[] = $this->store($image, 'slider');
+            }
+            Setting::set('slider_images', json_encode($paths));
+        }
+
+        return back()->with('success', 'Branding updated — the site now shows your new content.');
+    }
+
+    private function sliderImages(): array
+    {
+        return json_decode(Setting::get('slider_images', '[]'), true) ?: [];
     }
 
     private function store($file, string $prefix): string

@@ -23,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('siteLogo', Setting::get('site_logo', asset('logo/ss-removebg-preview.png')));
         View::share('siteFavicon', Setting::get('site_favicon', asset('favicon.ico')));
+        View::share('sliderImages', json_decode(Setting::get('slider_images', '[]'), true) ?: []);
     }
 }

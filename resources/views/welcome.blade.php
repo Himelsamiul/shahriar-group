@@ -873,8 +873,12 @@ Global Vision. Endless Possibilities
 
   <div class="image-slider">
 
-    <img src="logo/ChatGPT Image Nov 14, 2025, 09_58_20 PM.png" class="slider-img active">
-    <img src="logo/sss.jpeg" class="slider-img">
+    @forelse ($sliderImages as $img)
+        <img src="{{ $img }}" class="slider-img {{ $loop->first ? 'active' : '' }}" alt="Shahriar Group slide">
+    @empty
+        <img src="logo/ChatGPT Image Nov 14, 2025, 09_58_20 PM.png" class="slider-img active">
+        <img src="logo/sss.jpeg" class="slider-img">
+    @endforelse
 
   </div>
 

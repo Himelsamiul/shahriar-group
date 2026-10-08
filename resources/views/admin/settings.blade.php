@@ -32,7 +32,15 @@
                         <input type="text" name="site_title" value="{{ old('site_title', \App\Models\Setting::get('site_title', 'Shahriar Group | Global Vision, Endless Possibilities')) }}"
                                class="form-control @error('site_title') is-invalid @enderror">
                         <div class="form-text">The text shown in the browser tab.</div>
-                        @error('site_title')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Homepage carousel images <span class="text-muted small">(the sliding images)</span></label>
+                        <input type="file" name="slider_images[]" multiple
+                               class="form-control @error('slider_images.*') is-invalid @enderror"
+                               accept=".jpg,.jpeg,.png,.webp">
+                        <div class="form-text">Upload 2-10 images — uploading replaces the whole carousel. JPG/PNG/WEBP, max 4MB each.</div>
+                        @error('slider_images.*')<div class="invalid-feedback d-block">{{ $message }}</div>@enderror
                     </div>
 
                     <button class="btn btn-gold px-4">Save changes</button>
@@ -63,6 +71,17 @@
                     <div class="small text-muted mb-2">Hero / footer preview</div>
                     <img src="{{ $siteLogo }}" alt="logo" style="height:80px;object-fit:contain;">
                 </div>
+
+                @if (!empty($sliderImages))
+                    <div class="border rounded-3 p-3 mt-3">
+                        <div class="small text-muted mb-2">Current carousel images ({{ count($sliderImages) }})</div>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach ($sliderImages as $img)
+                                <img src="{{ $img }}" alt="slide" class="rounded border" style="height:60px;width:auto;">
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

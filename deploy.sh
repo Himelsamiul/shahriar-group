@@ -15,8 +15,9 @@ php artisan migrate --force
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
-# sync public assets to docroot (never deletes manually uploaded files like images)
-cp -rf "$APP"/public/. "$DOCROOT"/
+# sync public assets to docroot, but never touch uploads/ — it's a symlink to
+# the app's public/uploads where admin-uploaded branding lives
+rsync -a --exclude 'uploads/' "$APP/public/" "$DOCROOT"/
 # admin-uploaded branding lives in the app's public/uploads; expose it in the docroot.
 # rm first: if a previous deploy left a real dir there, ln would nest a symlink inside it
 mkdir -p "$APP/public/uploads"

@@ -17,9 +17,11 @@ php artisan route:cache
 php artisan view:cache
 # sync public assets to docroot (never deletes manually uploaded files like images)
 cp -rf "$APP"/public/. "$DOCROOT"/
-# admin-uploaded branding lives in the app's public/uploads; expose it in the docroot
-ln -sfn "$APP/public/uploads" "$DOCROOT/uploads"
+# admin-uploaded branding lives in the app's public/uploads; expose it in the docroot.
+# rm first: if a previous deploy left a real dir there, ln would nest a symlink inside it
 mkdir -p "$APP/public/uploads"
+rm -rf "$DOCROOT/uploads"
+ln -s "$APP/public/uploads" "$DOCROOT/uploads"
 
 # the docroot copy of index.php must reach the app one level up in laravel/
 # (the repo copy keeps ../ paths so local `php artisan serve` still works)

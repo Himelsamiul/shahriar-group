@@ -1325,7 +1325,7 @@ Global Vision. Endless Possibilities.
         <!-- CARD -->
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('nexus')">
-    <img src="logo1/nexus.jpeg">
+    <img src="{{ $subsidiaryImages['nexus'] ?? 'logo1/nexus.jpeg' }}">
     <h5>🌐 Shahriar Global Nexus LLC</h5>
     <p>Global Trade & Logistics</p>
   </div>
@@ -1333,7 +1333,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('energy')">
-    <img src="logo1/energy.jpeg">
+    <img src="{{ $subsidiaryImages['energy'] ?? 'logo1/energy.jpeg' }}">
     <h5>⚡ Shahriar Energy LLC</h5>
     <p>Oil, Gas & Renewable Energy</p>
   </div>
@@ -1341,7 +1341,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('tech')">
-    <img src="logo1/software.jpeg">
+    <img src="{{ $subsidiaryImages['software'] ?? 'logo1/software.jpeg' }}">
     <h5>💻 Shahriar Primex Tech LLC</h5>
     <p>Software & SaaS Solutions</p>
   </div>
@@ -1349,7 +1349,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('motors')">
-    <img src="logo1/motor.jpeg">
+    <img src="{{ $subsidiaryImages['motor'] ?? 'logo1/motor.jpeg' }}">
     <h5>🚗 Shahriar Global Motors LLC</h5>
     <p>Automotive & EV Business</p>
   </div>
@@ -1357,7 +1357,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('dev')">
-    <img src="logo1/dev1.jpeg">
+    <img src="{{ $subsidiaryImages['dev1'] ?? 'logo1/dev1.jpeg' }}">
     <h5>🏗️ Shahriar Global Developments LLC</h5>
     <p>Real Estate & Infrastructure</p>
   </div>
@@ -1365,7 +1365,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('hotels')">
-    <img src="logo1/hotel.jpeg">
+    <img src="{{ $subsidiaryImages['hotel'] ?? 'logo1/hotel.jpeg' }}">
     <h5>🏨 Shahriar International Hotels</h5>
     <p>Hotels & Resort Business</p>
   </div>
@@ -1373,7 +1373,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('hospitality')">
-    <img src="logo1/hospitality.jpeg">
+    <img src="{{ $subsidiaryImages['hospitality'] ?? 'logo1/hospitality.jpeg' }}">
     <h5>🏨 Shahriar Global Hospitality LLC</h5>
     <p>Hospitality Management</p>
   </div>
@@ -1381,7 +1381,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('foundation')">
-    <img src="logo1/found.jpeg">
+    <img src="{{ $subsidiaryImages['found'] ?? 'logo1/found.jpeg' }}">
     <h5>🤝 Shahriar Global Foundation LLC</h5>
     <p>Charity & Social Impact</p>
   </div>
@@ -1389,7 +1389,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('agro')">
-    <img src="logo1/agro.jpeg">
+    <img src="{{ $subsidiaryImages['agro'] ?? 'logo1/agro.jpeg' }}">
     <h5>🌱 Shahriar Agro LLC</h5>
     <p>Agriculture & Food Production</p>
   </div>
@@ -1397,7 +1397,7 @@ Global Vision. Endless Possibilities.
 
 <div class="slider-item">
   <div class="sg-card" onclick="showDetails('aviation')">
-    <img src="logo1/travel.jpeg">
+    <img src="{{ $subsidiaryImages['travel'] ?? 'logo1/travel.jpeg' }}">
     <h5>✈️ Shahriar Aviation LLC</h5>
     <p>Charter & Cargo Aviation</p>
   </div>
@@ -2101,7 +2101,7 @@ document.addEventListener("DOMContentLoaded", function(){
       <!-- Left Image -->
       <div class="col-lg-4 mb-4 mb-lg-0 ceo-img-wrapper order-1 order-lg-1">
         <img
-          src="ceo/ceo4.jpeg"
+          src="{{ $ceoPhoto }}"
           alt="CEO Photo"
           class="img-fluid rounded-4 shadow-lg ceo-img"
         />

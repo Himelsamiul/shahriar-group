@@ -18,7 +18,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
         Route::get('/', DashboardController::class)->name('dashboard');
-        Route::get('logo', [SettingsController::class, 'edit'])->name('settings');
-        Route::post('logo', [SettingsController::class, 'update'])->name('settings.update');
+        Route::get('branding', [SettingsController::class, 'branding'])->name('branding');
+        Route::post('branding', [SettingsController::class, 'brandingUpdate'])->name('branding.update');
+        Route::get('carousel', [SettingsController::class, 'carousel'])->name('carousel');
+        Route::post('carousel', [SettingsController::class, 'carouselUpdate'])->name('carousel.update');
+        Route::get('ceo-photo', [SettingsController::class, 'ceoPhoto'])->name('ceo');
+        Route::post('ceo-photo', [SettingsController::class, 'ceoPhotoUpdate'])->name('ceo.update');
+        Route::get('subsidiaries', [SettingsController::class, 'subsidiaries'])->name('subsidiaries');
+        Route::post('subsidiaries', [SettingsController::class, 'subsidiariesUpdate'])->name('subsidiaries.update');
     });
 });

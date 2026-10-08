@@ -5,66 +5,68 @@
 
 @section('content')
     <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-6 col-xl-3">
             <div class="card p-4 h-100">
-                <div class="d-flex align-items-center gap-3">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center"
-                         style="width:52px;height:52px;background:rgba(212,175,55,.15);">
-                        <i class="fa-solid fa-image text-gold fa-lg"></i>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;background:rgba(212,175,55,.15);">
+                        <i class="fa-solid fa-copyright text-gold"></i>
                     </div>
-                    <div>
-                        <div class="text-muted small">Current logo</div>
-                        <div class="fw-semibold">Site logo &amp; favicon</div>
-                    </div>
+                    <div class="fw-semibold">Logo &amp; Branding</div>
                 </div>
-                <hr>
-                <div class="d-flex align-items-center gap-3">
-                    <img src="{{ $siteLogo }}" alt="current logo" style="height:56px;object-fit:contain;">
-                    <div class="small text-muted">Shown on navbar, hero, footer<br>and browser tab (favicon)</div>
-                </div>
-                <div class="mt-3">
-                    <a href="{{ route('admin.settings') }}" class="btn btn-gold btn-sm">Update logo</a>
-                </div>
-                <hr>
-                <div class="d-flex align-items-center gap-3">
-                    <img src="{{ $siteFavicon }}" alt="current favicon" style="height:32px;width:32px;object-fit:contain;">
-                    <div class="small text-muted">Browser tab icon</div>
-                </div>
+                <p class="small text-muted">Site logo, browser tab favicon and tab title.</p>
+                <a href="{{ route('admin.branding') }}" class="btn btn-gold btn-sm mt-auto">Manage</a>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-xl-3">
             <div class="card p-4 h-100">
-                <div class="d-flex align-items-center gap-3">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center"
-                         style="width:52px;height:52px;background:rgba(212,175,55,.15);">
-                        <i class="fa-solid fa-globe text-gold fa-lg"></i>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;background:rgba(212,175,55,.15);">
+                        <i class="fa-solid fa-images text-gold"></i>
                     </div>
-                    <div>
-                        <div class="text-muted small">Live site</div>
-                        <div class="fw-semibold">shahriargroup.com</div>
-                    </div>
+                    <div class="fw-semibold">Homepage Carousel</div>
                 </div>
-                <hr>
-                <p class="small text-muted mb-1">Public website — always updated from this admin panel.</p>
-                <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-secondary btn-sm">Visit website</a>
+                <p class="small text-muted">The sliding images in the Welcome section.</p>
+                <a href="{{ route('admin.carousel') }}" class="btn btn-gold btn-sm mt-auto">Manage</a>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-6 col-xl-3">
             <div class="card p-4 h-100">
-                <div class="d-flex align-items-center gap-3">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center"
-                         style="width:52px;height:52px;background:rgba(212,175,55,.15);">
-                        <i class="fa-solid fa-user text-gold fa-lg"></i>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;background:rgba(212,175,55,.15);">
+                        <i class="fa-solid fa-user-tie text-gold"></i>
                     </div>
+                    <div class="fw-semibold">CEO Photo</div>
+                </div>
+                <p class="small text-muted">Photo on the Leadership &amp; CEO Message section.</p>
+                <a href="{{ route('admin.ceo') }}" class="btn btn-gold btn-sm mt-auto">Manage</a>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card p-4 h-100">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="rounded-3 d-flex align-items-center justify-content-center" style="width:48px;height:48px;background:rgba(212,175,55,.15);">
+                        <i class="fa-solid fa-sitemap text-gold"></i>
+                    </div>
+                    <div class="fw-semibold">Subsidiary Logos</div>
+                </div>
+                <p class="small text-muted">Circular images on the 10 subsidiary cards.</p>
+                <a href="{{ route('admin.subsidiaries') }}" class="btn btn-gold btn-sm mt-auto">Manage</a>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card p-4 d-flex flex-row align-items-center justify-content-between flex-wrap gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="{{ $siteLogo }}" alt="logo" style="height:48px;object-fit:contain;">
                     <div>
-                        <div class="text-muted small">Logged in as</div>
-                        <div class="fw-semibold">{{ auth()->user()->email }}</div>
+                        <div class="fw-semibold">Live site: shahriargroup.com</div>
+                        <div class="small text-muted">Everything you change here appears on the public website instantly.</div>
                     </div>
                 </div>
-                <hr>
-                <p class="small text-muted mb-0">Changes you make here appear on the live site immediately.</p>
+                <a href="{{ url('/') }}" target="_blank" class="btn btn-outline-secondary">Visit website</a>
             </div>
         </div>
     </div>

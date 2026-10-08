@@ -9,3 +9,6 @@
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+
+# shell scripts must stay LF for the deploy runner
+*.sh text eol=lf

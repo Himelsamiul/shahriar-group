@@ -20,10 +20,6 @@ cp -rf "$APP"/public/. "$DOCROOT"/
 
 # the docroot copy of index.php must reach the app one level up in laravel/
 # (the repo copy keeps ../ paths so local `php artisan serve` still works)
-sed -i \
-  -e "s|__DIR__.'\.\./vendor/autoload.php'|__DIR__.'\.\./laravel/vendor/autoload.php'|" \
-  -e "s|__DIR__.'\.\./bootstrap/app.php'|__DIR__.'\.\./laravel/bootstrap/app.php'|" \
-  -e "s|__DIR__.'\.\./storage/framework/maintenance.php'|__DIR__.'\.\./laravel/storage/framework/maintenance.php'|" \
-  "$DOCROOT/index.php"
+sed -i "s|\.\./vendor/autoload\.php|../laravel/vendor/autoload.php|; s|\.\./bootstrap/app\.php|../laravel/bootstrap/app.php|; s|\.\./storage/framework/maintenance\.php|../laravel/storage/framework/maintenance.php|" "$DOCROOT/index.php"
 
 echo "Deploy finished: $(date)"

@@ -3,40 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="page_title">
-      Shahriar Group | Global Vision, Endless Possibilities
-      <link rel="icon" type="image/png" href="logo/ss-removebg-preview.png" />
-    </title>
-    <!-- Favicon / Website Icon -->
-    <link rel="icon" type="image/png" href="logo/ss-removebg-preview.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Optional: Apple Touch Icon -->
-    <link rel="apple-touch-icon" href="logo/ss-removebg-preview.png" />
-<!-- Basic SEO Meta Tags -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title data-i18n="page_title">Shahriar Group | Global Vision, Endless Possibilities</title>
+    <meta name="description" content="Shahriar Group is a global conglomerate dedicated to innovation, sustainability, and excellence across diverse industries, driving growth and positive change worldwide." />
+    <meta name="keywords" content="Shahriar Group, Shahriar Group Bangladesh, Shahriar Industries, global business, corporate group, innovation, sustainability, manufacturing, construction, trading, real estate, power, logistics" />
+    <meta name="author" content="Shahriar Group" />
 
-<title>Shahriar Group | Global Vision, Endless Possibilities</title>
-<meta name="description" content="Shahriar Group is a global conglomerate dedicated to innovation, sustainability, and excellence across diverse industries, driving growth and positive change worldwide." />
-<meta name="keywords" content="Shahriar Group, Shahriar Group Bangladesh, Shahriar Industries, global business, corporate group, innovation, sustainability, manufacturing, construction, trading, real estate, power, logistics" />
-<meta name="author" content="Shahriar Group" />
+    <!-- Favicon / Website Icon (managed from admin panel) -->
+    <link rel="icon" type="image/png" href="{{ $siteFavicon }}" />
+    <link rel="apple-touch-icon" href="{{ $siteFavicon }}" />
 
-<!-- Open Graph (for Facebook, LinkedIn) -->
-<meta property="og:title" content="Shahriar Group | Global Vision, Endless Possibilities" />
-<meta property="og:description" content="A global conglomerate leading innovation, sustainability, and excellence across industries." />
-<meta property="og:image" content="https://shahriargroup.com/logo/logo.png" />
-<meta property="og:url" content="https://shahriargroup.com/" />
-<meta property="og:type" content="website" />
+    <!-- Open Graph (for Facebook, LinkedIn) -->
+    <meta property="og:title" content="Shahriar Group | Global Vision, Endless Possibilities" />
+    <meta property="og:description" content="A global conglomerate leading innovation, sustainability, and excellence across industries." />
+    <meta property="og:image" content="{{ $siteLogo }}" />
+    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:type" content="website" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Shahriar Group | Global Vision, Endless Possibilities" />
-<meta name="twitter:description" content="A global conglomerate leading innovation, sustainability, and excellence across industries." />
-<meta name="twitter:image" content="https://shahriargroup.com/logo/logo.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shahriar Group | Global Vision, Endless Possibilities" />
+    <meta name="twitter:description" content="A global conglomerate leading innovation, sustainability, and excellence across industries." />
+    <meta name="twitter:image" content="{{ $siteLogo }}" />
 
-<!-- Favicon -->
-<link rel="icon" href="https://shahriargroup.com/logo/logo.png" type="image/png" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url('/') }}" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://shahriargroup.com/" />
@@ -531,7 +523,7 @@
         <!-- Brand + Logo -->
         <a class="navbar-brand d-flex align-items-center" href="#home">
           <img
-            src="logo/ss-removebg-preview.png"
+            src="{{ $siteLogo }}"
             alt="Shahriar Group Logo"
             class="me-2"
             style="
@@ -641,7 +633,7 @@
             <div class="carousel-item active bg-dark text-white">
   <div class="container py-5 mt-5 text-center">
     <div class="col-lg-8 mx-auto">
-      <img src="logo/ss-removebg-preview.png" alt="Shahriar Group Logo" class="img-fluid mb-4" style="max-height: 180px;">
+      <img src="{{ $siteLogo }}" alt="Shahriar Group Logo" class="img-fluid mb-4" style="max-height: 180px;">
       
       <!-- <h1 class="display-4 fw-bold mb-3 text-warning">
         Shahriar Group
@@ -686,7 +678,7 @@
 <div class="carousel-item bg-dark text-white">
   <div class="container py-5 mt-5 text-center">
     <div class="col-lg-8 mx-auto">
-      <img src="logo/ss-removebg-preview.png" alt="Shahriar Group Logo" class="img-fluid mb-4" style="max-height: 180px;">
+      <img src="{{ $siteLogo }}" alt="Shahriar Group Logo" class="img-fluid mb-4" style="max-height: 180px;">
 
       <!-- Main Title -->
       <h1 class="fw-bold mb-3" style="font-size: 2.8rem; letter-spacing: 1px;">
@@ -3609,7 +3601,7 @@ document.addEventListener("DOMContentLoaded", function(){
     <!-- TOP BRAND -->
     <div class="text-center mb-5">
       <div class="d-flex justify-content-center align-items-center mb-3">
-        <img src="logo/logo.png" style="height:70px;width:70px;border-radius:50%;">
+        <img src="{{ $siteLogo }}" style="height:70px;width:70px;border-radius:50%;">
         <h2 class="ms-3 text-gold fw-bold">SHAHRIAR GROUP</h2>
       </div>
       <p class="text-light mb-1">A Global Business & Investment Company</p>
